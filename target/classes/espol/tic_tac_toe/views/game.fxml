@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" stylesheets="@../styles/game.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.tic_tac_toe.controllers.GameController">
+    <children>
+        <BorderPane prefHeight="100.0" prefWidth="560.0" scaleShape="false">
+            <left>
+                <HBox fx:id="logo" alignment="CENTER" prefHeight="53.0" prefWidth="126.0" spacing="10.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <SVGPath content="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z" fill="#31c3bd" />
+                        <SVGPath content="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z" fill="#f2b137" />
+                    </children>
+                </HBox>
+            </left>
+            <center>
+                <HBox alignment="CENTER" prefHeight="53.0" prefWidth="288.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox fx:id="turnContainer" alignment="CENTER" prefHeight="46.0" prefWidth="106.0" spacing="10.0">
+                            <children>
+                                <SVGPath fx:id="currentTurn" content="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z" fill="#a8bfc9" />
+                                <Label fx:id="turnLabel" text="TURN" />
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                </HBox>
+            </center>
+            <right>
+                <HBox alignment="CENTER" fillHeight="false" prefHeight="53.0" prefWidth="118.0" spacing="5.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button fx:id="restartBtn" mnemonicParsing="false" onAction="#onRestart" prefHeight="40.0" prefWidth="40.0" styleClass="actionBtn">
+                            <graphic>
+                                <SVGPath content="M19.524 0h-1.88a.476.476 0 0 0-.476.499l.159 3.284A9.81 9.81 0 0 0 9.835.317C4.415.317-.004 4.743 0 10.167.004 15.597 4.406 20 9.835 20a9.796 9.796 0 0 0 6.59-2.536.476.476 0 0 0 .019-.692l-1.348-1.349a.476.476 0 0 0-.65-.022 6.976 6.976 0 0 1-9.85-.63 6.987 6.987 0 0 1 .63-9.857 6.976 6.976 0 0 1 10.403 1.348l-4.027-.193a.476.476 0 0 0-.498.476v1.881c0 .263.213.476.476.476h7.944A.476.476 0 0 0 20 8.426V.476A.476.476 0 0 0 19.524 0Z" fill="#1f3641" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#onSave" prefHeight="40.0" prefWidth="40.0" styleClass="actionBtn">
+                            <graphic>
+                                <SVGPath content="M 20.339844 6.089844 L 16.410156 2.160156 C 15.988281 1.738281 15.414062 1.5 14.816406 1.5 L 2.25 1.5 C 1.007812 1.5 0 2.507812 0 3.75 L 0 20.25 C 0 21.492188 1.007812 22.5 2.25 22.5 L 18.75 22.5 C 19.992188 22.5 21 21.492188 21 20.25 L 21 7.683594 C 21 7.085938 20.761719 6.511719 20.339844 6.089844 M 10.5 19.5 C 8.84375 19.5 7.5 18.15625 7.5 16.5 C 7.5 14.84375 8.84375 13.5 10.5 13.5 C 12.15625 13.5 13.5 14.84375 13.5 16.5 C 13.5 18.15625 12.15625 19.5 10.5 19.5 M 15 5.226562 L 15 9.9375 C 15 10.25 14.75 10.5 14.4375 10.5 L 3.5625 10.5 C 3.25 10.5 3 10.25 3 9.9375 L 3 5.0625 C 3 4.75 3.25 4.5 3.5625 4.5 L 14.273438 4.5 C 14.421875 4.5 14.566406 4.558594 14.671875 4.664062 L 14.835938 4.828125 C 14.941406 4.933594 15 5.078125 15 5.226562 " fill="#1f3641" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#onExit" prefHeight="40.0" prefWidth="40.0" styleClass="actionBtn">
+                            <graphic>
+                                <SVGPath content="M 23.589844 13.007812 L 19.769531 17.695312 C 19.597656 17.882812 19.367188 17.980469 19.078125 17.988281 C 18.789062 17.996094 18.539062 17.9375 18.328125 17.8125 C 18.117188 17.6875 18.011719 17.539062 18.011719 17.367188 L 18.011719 15 L 15.011719 15 C 14.605469 15 14.253906 14.855469 13.957031 14.566406 C 13.660156 14.277344 13.511719 13.921875 13.511719 13.5 L 13.511719 10.5 C 13.511719 10.078125 13.660156 9.722656 13.957031 9.433594 C 14.253906 9.144531 14.605469 9 15.011719 9 L 18.011719 9 L 18.011719 6.65625 C 18.011719 6.46875 18.117188 6.3125 18.328125 6.1875 C 18.539062 6.0625 18.789062 6.003906 19.078125 6.011719 C 19.367188 6.019531 19.597656 6.117188 19.769531 6.304688 L 23.589844 10.96875 C 23.871094 11.25 24.011719 11.589844 24.011719 11.988281 C 24.011719 12.386719 23.871094 12.726562 23.589844 13.007812 M 15.023438 6 C 14.609375 6 14.253906 5.851562 13.957031 5.554688 C 13.660156 5.257812 13.511719 4.902344 13.511719 4.488281 C 13.511719 4.074219 13.367188 3.722656 13.078125 3.433594 C 12.789062 3.144531 12.433594 3 12.011719 3 L 4.511719 3 C 4.105469 3 3.753906 3.144531 3.457031 3.433594 C 3.160156 3.722656 3.011719 4.078125 3.011719 4.5 L 3.011719 19.5 C 3.011719 19.90625 3.160156 20.257812 3.457031 20.554688 C 3.753906 20.851562 4.105469 21 4.511719 21 L 12.011719 21 C 12.433594 21 12.789062 20.851562 13.078125 20.554688 C 13.367188 20.257812 13.511719 19.902344 13.511719 19.488281 C 13.511719 19.074219 13.660156 18.722656 13.957031 18.433594 C 14.253906 18.144531 14.609375 18 15.023438 18 C 15.4375 18 15.789062 18.144531 16.078125 18.433594 C 16.367188 18.722656 16.511719 19.078125 16.511719 19.5 L 16.511719 21 C 16.511719 21.828125 16.21875 22.535156 15.632812 23.121094 C 15.046875 23.707031 14.339844 24 13.511719 24 L 3.011719 24 C 2.183594 24 1.476562 23.707031 0.890625 23.121094 C 0.304688 22.535156 0.0117188 21.828125 0.0117188 21 L 0.0117188 3 C 0.0117188 2.171875 0.304688 1.464844 0.890625 0.878906 C 1.476562 0.292969 2.183594 0 3.011719 0 L 13.511719 0 C 14.339844 0 15.046875 0.292969 15.632812 0.878906 C 16.21875 1.464844 16.511719 2.171875 16.511719 3 L 16.511719 4.5 C 16.511719 4.90625 16.367188 5.257812 16.078125 5.554688 C 15.789062 5.851562 15.4375 6 15.023438 6 " fill="#1f3641" />
+                            </graphic>
+                        </Button>
+                    </children>
+                </HBox>
+            </right>
+        </BorderPane>
+        <GridPane fx:id="gridPane" alignment="CENTER" hgap="20.0" prefHeight="520.0" prefWidth="520.0" vgap="20.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <VBox.margin>
+                <Insets bottom="20.0" top="20.0" />
+            </VBox.margin>
+            <children>
+                <VBox alignment="CENTER" prefHeight="178.0" prefWidth="216.0" styleClass="card">
+                    <children>
+                        <SVGPath fill="#ffffff00" stroke="#f2b137" strokeWidth="2.0" />
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="card" GridPane.columnIndex="1">
+                    <children>
+                        <SVGPath fill="#ffffff00" stroke="#31c3bd" strokeWidth="2.0" />
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="card" GridPane.columnIndex="2">
+                    <children>
+                        <SVGPath fill="#ffffff00" stroke="#f2b137" strokeWidth="2.0" />
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="card" GridPane.rowIndex="1">
+                    <children>
+                        <SVGPath fill="#ffffff00" stroke="#f2b137" strokeWidth="2.0" />
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="card" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <SVGPath fill="#ffffff00" stroke="#f2b137" strokeWidth="2.0" />
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="card" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <children>
+                        <SVGPath fill="#ffffff00" stroke="#f2b137" strokeWidth="2.0" />
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="card" GridPane.rowIndex="2">
+                    <children>
+                        <SVGPath fill="#ffffff00" stroke="#31c3bd" strokeWidth="2.0" />
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="card" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <children>
+                        <SVGPath fill="#ffffff00" stroke="#f2b137" strokeWidth="2.0" />
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="card" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                    <children>
+                        <SVGPath fill="#ffffff00" stroke="#31c3bd" strokeWidth="2.0" />
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
+        <HBox alignment="CENTER" prefHeight="164.0" prefWidth="520.0" spacing="50.0">
+            <children>
+                <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0" styleClass="countContainer" fx:id="xWinsContainer">
+                    <children>
+                        <Label styleClass="countLabel" text="X" fx:id="xLabel" />
+                        <Label text="0" fx:id="xWinsLabel" />
+                    </children>
+                </VBox>
+                <VBox fx:id="tiesContainer" alignment="CENTER" prefHeight="100.0" prefWidth="100.0" styleClass="countContainer">
+                    <children>
+                        <Label styleClass="countLabel" text="TIES" />
+                        <Label fx:id="tiesLabel" text="0" />
+                    </children>
+                </VBox>
+                <VBox fx:id="oWinsContainer" alignment="CENTER" prefHeight="100.0" prefWidth="100.0" styleClass="countContainer">
+                    <children>
+                        <Label fx:id="oLabel" styleClass="countLabel" text="O" />
+                        <Label fx:id="oWinsLabel" text="0" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+</VBox>

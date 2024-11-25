@@ -1,0 +1,55 @@
+#root {
+    -fx-background-color: #1a2a33;
+}
+
+#turnContainer {
+    -fx-background-color: #1f3641;
+    -fx-background-radius: 16px;
+    -fx-effect: innershadow(three-pass-box, rgba(15, 25, 30, 1), 0, 0, 0, -5);
+}
+
+#turnLabel {
+    -fx-text-fill: #a8bfc9;
+    -fx-font-weight: 900;
+}
+
+.actionBtn {
+    -fx-background-color: #a8bfc9;
+    -fx-background-radius: 16px;
+    -fx-effect: innershadow(three-pass-box, rgb(105, 145, 162), 0, 0, 0, -5);
+}
+
+.card{
+    -fx-background-color: #1f3641;
+    -fx-background-radius: 16px;
+    -fx-effect: innershadow(three-pass-box, rgb(15, 25, 30), 0, 0, 0, -10);
+}
+
+.countContainer {
+    -fx-background-radius: 16px;
+    -fx-font-weight: 900;
+}
+
+#xWinsContainer {
+    -fx-background-color: #31c3bd;
+}
+
+#xWinsLabel{
+    -fx-font-size: 25px;
+}
+
+#tiesContainer {
+    -fx-background-color: #a8bfc9;
+}
+
+#tiesLabel{
+    -fx-font-size: 25px;
+}
+
+#oWinsContainer {
+    -fx-background-color: #f2b137;
+}
+
+#oWinsLabel{
+    -fx-font-size: 25px;
+}

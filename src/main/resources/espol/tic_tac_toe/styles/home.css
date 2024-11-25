@@ -1,0 +1,71 @@
+#root {
+    -fx-background-color: #1a2a33;
+}
+
+#pickLabel {
+    -fx-text-fill: #a8bfc9;
+    -fx-font-weight: 900;
+    -fx-font-size: 17px;
+}
+
+#selectorContainer {
+    -fx-background-radius: 16px;
+    -fx-background-color: #1f3641;
+    -fx-effect: innershadow(three-pass-box, rgb(15, 25, 30), 0, 0, 0, -10);
+}
+
+#whoStartsLabel {
+    -fx-text-fill: #a8bfc9;
+    -fx-font-weight: 900;
+    -fx-opacity: 0.5;
+}
+
+.XOBtnContainer {
+    -fx-background-radius: 16px;
+    -fx-background-color: #1a2a33;
+    
+}
+
+.selectionBtn {
+    -fx-background-radius: 16px;
+    -fx-background-color: #1a2a33;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 42px;
+    
+}
+
+.startSelectionBtn {
+    -fx-background-radius: 16px;
+    -fx-background-color: #1a2a33;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 32px;
+}
+
+.menuBtn {
+    -fx-background-radius: 16px;
+    -fx-pref-width: 520px;
+    -fx-pref-height: 80px;
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+    -fx-padding: 0 0 10 0;
+}
+
+#versusCPUBtn {
+    -fx-background-color: #f2b137;
+    -fx-effect: innershadow(three-pass-box,#b77c0c, 0, 0, 0, -10);
+}
+
+#versusP2Btn {
+    -fx-background-color: #31c3bd;
+    -fx-effect: innershadow(three-pass-box,#1d716e, 0, 0, 0, -10);
+}
+
+#loadGameBtn {
+    -fx-background-color: #f2b137;
+    -fx-effect: innershadow(three-pass-box,#b77c0c, 0, 0, 0, -10);
+}
+
+#fullCPUBtn {
+    -fx-background-color: #31c3bd;
+    -fx-effect: innershadow(three-pass-box,#1d716e, 0, 0, 0, -10);
+}

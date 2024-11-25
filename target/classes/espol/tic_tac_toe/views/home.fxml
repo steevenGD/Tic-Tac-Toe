@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" spacing="30.0" stylesheets="@../styles/home.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.tic_tac_toe.controllers.HomeController">
+   <children>
+      <VBox prefHeight="68.0" prefWidth="520.0">
+         <children>
+            <HBox fx:id="logo" alignment="CENTER" prefHeight="73.0" prefWidth="520.0" spacing="10.0">
+               <children>
+                  <SVGPath content="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z" fill="#31c3bd" />
+                  <SVGPath content="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z" fill="#f2b137" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox fx:id="selectorContainer" alignment="CENTER" prefHeight="274.0" prefWidth="520.0" spacing="5.0">
+         <children>
+            <Label fx:id="pickLabel" text="PICK PLAYER 1'S MARK" />
+            <HBox fx:id="XOBtnContainer" alignment="CENTER" prefHeight="75.0" prefWidth="470.0" spacing="10.0" styleClass="XOBtnContainer">
+               <children>
+                  <ToggleButton mnemonicParsing="false" onAction="#onMarkSelected" styleClass="selectionBtn" fx:id="xSelectionBtn">
+                     <graphic>
+                        <SVGPath content="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z" fill="#a8bfc9" fx:id="xSVG" />
+                     </graphic>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="markSelector" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton fx:id="oSelectionBtn" mnemonicParsing="false" onAction="#onMarkSelected" styleClass="selectionBtn" toggleGroup="$markSelector">
+                     <graphic>
+                        <SVGPath fx:id="oSVG" content="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931ZM56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z" fill="#a8bfc9" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ToggleButton>
+               </children>
+               <VBox.margin>
+                  <Insets left="30.0" right="20.0" />
+               </VBox.margin>
+            </HBox>
+            <Label fx:id="whoStartsLabel" prefHeight="17.0" prefWidth="129.0" text="CHOOSE FIRST TURN" />
+            <HBox fx:id="startBtnContainer" alignment="CENTER" prefHeight="60.0" prefWidth="280.0" spacing="10.0" styleClass="XOBtnContainer">
+               <children>
+                  <ToggleButton minHeight="-Infinity" mnemonicParsing="false" onAction="#onFirstSelected" prefHeight="0.0" styleClass="startSelectionBtn" fx:id="xFirstBtn">
+                     <graphic>
+                        <SVGPath content="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z" fill="#a8bfc9" scaleX="0.75" scaleY="0.75" scaleZ="0.75" fx:id="xFirstSVG" />
+                     </graphic>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="firstSelector" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton fx:id="oFirstBtn" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onFirstSelected" prefHeight="0.0" styleClass="startSelectionBtn" toggleGroup="$firstSelector">
+                     <graphic>
+                        <SVGPath fx:id="oFirstSVG" content="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931ZM56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z" fill="#a8bfc9" scaleX="0.75" scaleY="0.75" scaleZ="0.75" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ToggleButton>
+               </children>
+               <VBox.margin>
+                  <Insets left="120.0" right="120.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="293.0" prefWidth="520.0" spacing="12.0">
+         <children>
+            <Button fx:id="versusCPUBtn" mnemonicParsing="false" onAction="#onNewGameVersusCPU" styleClass="menuBtn" text="NEW GAME (VS CPU)" />
+            <Button fx:id="versusP2Btn" mnemonicParsing="false" onAction="#onNewGameVersusP2" styleClass="menuBtn" text="NEW GAME (VS PLAYER 2)" />
+            <Button fx:id="loadGameBtn" mnemonicParsing="false" onAction="#onLoadGame" styleClass="menuBtn" text="LOAD GAME" />
+            <Button fx:id="fullCPUBtn" mnemonicParsing="false" onAction="#onNewGameCPU1vsCPU2" styleClass="menuBtn" text="NEW GAME (CPU1 VS CPU2)">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+   </padding>
+</VBox>

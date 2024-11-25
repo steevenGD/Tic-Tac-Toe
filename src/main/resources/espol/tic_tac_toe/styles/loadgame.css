@@ -1,0 +1,62 @@
+#root {
+    -fx-background-color: #1a2a33;
+}
+
+#backBtn {
+    -fx-background-radius: 16px;
+    -fx-background-color: #31c3bd;
+    -fx-pref-width: 60px;
+    -fx-pref-height: 40px;
+    -fx-effect: innershadow(three-pass-box,#1d716e, 0, 0, 0, -6);
+}
+
+.scroll-pane{
+   -fx-background-color:transparent;
+}
+
+.scroll-pane > .viewport { 
+   -fx-background-color: transparent;
+}
+
+.sessionContainer {
+    -fx-background-radius: 16px;
+    -fx-background-color: #1f3641;
+    -fx-effect: innershadow(three-pass-box, rgb(15, 25, 30), 0, 0, 0, -10);
+    -fx-pref-width: 502px;
+    -fx-pref-height: 124px;
+    -fx-min-width: 502px;
+    -fx-min-height: 124px;
+    -fx-padding: 15 15 25 15;
+}
+
+.resumeBtn {
+    -fx-background-radius: 16px;
+    -fx-background-color: #f2b137;
+    -fx-pref-width: 80px;
+    -fx-pref-height: 40px;
+    -fx-effect: innershadow(three-pass-box,#b77c0c, 0, 0, 0, -6);
+}
+
+.deleteBtn{
+    -fx-background-radius: 14px;
+    -fx-background-color: #ee0612;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 40px;
+    -fx-effect: innershadow(three-pass-box,#a7020b, 0, 0, 0, -6);
+}
+
+.info{
+    -fx-background-radius: 16px;
+    -fx-background-color: #1a2a33;
+    -fx-pref-width: 472px;
+    -fx-pref-height: 80px;
+    -fx-min-width: 472px;
+    -fx-min-height: 80px;
+    -fx-padding: 0 15 0 15;
+}
+
+.text {
+    -fx-text-fill: #a8bfc9;
+    -fx-font-weight: 900;
+    -fx-opacity: 0.5;
+}
